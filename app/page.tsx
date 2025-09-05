@@ -1,22 +1,17 @@
-import { SearchForm } from "@/components/search-form"
-import { Hero } from "@/components/hero"
-import { InfoSection } from "@/components/info-section"
-import { FeatureCards } from "@/components/feature-cards"
-import { RecentJobs } from "@/components/recent-jobs"
+import { Navigation } from "@/components/navigation"
+import { HeroSection } from "@/components/hero-section"
+import { FeaturedJobs } from "@/components/featured-jobs"
+import { Footer } from "@/components/footer"
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col">
-      <Hero />
-      <div className="container mx-auto px-4 py-8">
-        <SearchForm />
-        <RecentJobs />
-        <InfoSection
-          title="GP Recruitment in Australia"
-          description="Finding the right General Practitioner position in Australia involves navigating various regulatory requirements and understanding the healthcare landscape."
-        />
-        <FeatureCards />
-      </div>
-    </main>
+    <div className="min-h-screen bg-background">
+      <Navigation />
+      <main>
+        <HeroSection />
+        <FeaturedJobs />
+      </main>
+      <Footer />
+    </div>
   )
 }

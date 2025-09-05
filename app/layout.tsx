@@ -1,63 +1,28 @@
 import type React from "react"
-import { Inter } from "next/font/google"
+import type { Metadata } from "next"
+import { GeistSans } from "geist/font/sans"
+import { GeistMono } from "geist/font/mono"
+import { Analytics } from "@vercel/analytics/next"
+import { Suspense } from "react"
 import "./globals.css"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { ThemeProvider } from "@/components/theme-provider"
 
-const inter = Inter({ subsets: ["latin"] })
-
-export const metadata = {
-  title: "GPJobs.au - GP Recruitment & Jobs in Australia",
+export const metadata: Metadata = {
+  title: "Western Sydney Jobs - Find Your Next Career Opportunity",
   description:
-    "Find GP jobs across Australia or recruit qualified doctors for your practice. Expert guidance on AHPRA registration, Medicare provider numbers, DPA, MMM classifications, and GP training programs.",
-  keywords:
-    "GP jobs, doctor jobs, medical recruitment, general practitioner, Australia, DPA, MMM, AHPRA, Medicare provider numbers",
-  authors: [{ name: "GPJobs.au" }],
-  creator: "GPJobs.au",
-  publisher: "GPJobs.au",
-  openGraph: {
-    type: "website",
-    locale: "en_AU",
-    url: "https://gpjobs.au",
-    siteName: "GPJobs.au",
-    title: "GPJobs.au - GP Recruitment & Jobs in Australia",
-    description:
-      "Find GP jobs across Australia or recruit qualified doctors for your practice. Expert guidance on AHPRA registration, Medicare provider numbers, DPA, MMM classifications, and GP training programs.",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "GPJobs.au - Connecting GPs with the right practices across Australia",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "GPJobs.au - GP Recruitment & Jobs in Australia",
-    description:
-      "Find GP jobs across Australia or recruit qualified doctors for your practice. Expert guidance on AHPRA registration, Medicare provider numbers, DPA, MMM classifications, and GP training programs.",
-    images: ["/og-image.jpg"],
-  },
-    generator: 'v0.app'
+    "Discover job opportunities in Western Sydney. Connect with local employers and find your perfect career match in Australia's fastest-growing region.",
+  generator: "Western Sydney Jobs Portal",
 }
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <div className="flex flex-col min-h-screen">
-            <Header />
-            <div className="flex-grow">{children}</div>
-            <Footer />
-          </div>
-        </ThemeProvider>
+      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+        <Suspense fallback={null}>{children}</Suspense>
+        <Analytics />
       </body>
     </html>
   )

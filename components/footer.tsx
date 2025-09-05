@@ -1,136 +1,114 @@
 import Link from "next/link"
+import { Building2, Mail, Phone, MapPin } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4">GPJobs.au</h3>
-            <p className="text-gray-400">
-              Connecting GPs with the right practices across Australia, simplifying the complex recruitment process.
+    <footer className="bg-primary text-primary-foreground">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div className="col-span-1 md:col-span-2">
+            <div className="flex items-center space-x-2 mb-4">
+              <Building2 className="h-8 w-8 text-accent" />
+              <span className="font-bold text-xl">Western Sydney Jobs</span>
+            </div>
+            <p className="text-primary-foreground/80 mb-4 max-w-md">
+              Connecting talent with opportunity in Western Sydney. Your gateway to career success in Australia's most
+              dynamic region.
             </p>
+            <div className="space-y-2 text-sm text-primary-foreground/80">
+              <div className="flex items-center">
+                <Mail className="h-4 w-4 mr-2" />
+                <span>hello@westernsydneyjobs.com.au</span>
+              </div>
+              <div className="flex items-center">
+                <Phone className="h-4 w-4 mr-2" />
+                <span>1300 WSJ JOBS</span>
+              </div>
+              <div className="flex items-center">
+                <MapPin className="h-4 w-4 mr-2" />
+                <span>Western Sydney, NSW, Australia</span>
+              </div>
+            </div>
           </div>
 
+          {/* Job Seekers */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">For Doctors</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold mb-4">For Job Seekers</h3>
+            <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>
-                <a
-                  href="https://www.ahpra.gov.au/Registration.aspx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white"
-                >
-                  AHPRA Registration
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.servicesaustralia.gov.au/organisations/health-professionals/services/medicare/medicare-benefits-health-professionals"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white"
-                >
-                  Medicare Provider Numbers
-                </a>
-              </li>
-              <li>
-                <Link href="/for-doctors/training-programs" className="text-gray-400 hover:text-white">
-                  GP Training Programs
+                <Link href="/jobs" className="hover:text-accent transition-colors">
+                  Browse Jobs
                 </Link>
               </li>
               <li>
-                <Link href="/for-doctors/international-graduates" className="text-gray-400 hover:text-white">
-                  IMG Pathways
+                <Link href="/companies" className="hover:text-accent transition-colors">
+                  Company Profiles
+                </Link>
+              </li>
+              <li>
+                <Link href="/career-advice" className="hover:text-accent transition-colors">
+                  Career Advice
+                </Link>
+              </li>
+              <li>
+                <Link href="/resume-builder" className="hover:text-accent transition-colors">
+                  Resume Builder
+                </Link>
+              </li>
+              <li>
+                <Link href="/salary-guide" className="hover:text-accent transition-colors">
+                  Salary Guide
                 </Link>
               </li>
             </ul>
           </div>
 
+          {/* Employers */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">For Practices</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold mb-4">For Employers</h3>
+            <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>
-                <Link href="/for-practices/recruitment-guide" className="text-gray-400 hover:text-white">
-                  Recruitment Guide
-                </Link>
-              </li>
-              <li>
-                <Link href="/for-practices/classifications" className="text-gray-400 hover:text-white">
-                  DPA & MMM Classifications
-                </Link>
-              </li>
-              <li>
-                <Link href="/for-practices/regulatory-requirements" className="text-gray-400 hover:text-white">
-                  Regulatory Requirements
-                </Link>
-              </li>
-              <li>
-                <Link href="/dashboard/jobs/new" className="text-gray-400 hover:text-white">
+                <Link href="/post-job" className="hover:text-accent transition-colors">
                   Post a Job
                 </Link>
               </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Resources</h3>
-            <ul className="space-y-2">
               <li>
-                <a
-                  href="https://www.ahpra.gov.au/Resources.aspx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white"
-                >
-                  AHPRA Resources
-                </a>
+                <Link href="/employer-dashboard" className="hover:text-accent transition-colors">
+                  Employer Dashboard
+                </Link>
               </li>
               <li>
-                <a
-                  href="https://www.racgp.org.au/education/education-providers/regional-training/fellowship-support-program"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white"
-                >
-                  RACGP Resources
-                </a>
+                <Link href="/pricing" className="hover:text-accent transition-colors">
+                  Pricing Plans
+                </Link>
               </li>
               <li>
-                <a
-                  href="https://www.acrrm.org.au/resources"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white"
-                >
-                  ACRRM Resources
-                </a>
+                <Link href="/recruitment-services" className="hover:text-accent transition-colors">
+                  Recruitment Services
+                </Link>
               </li>
               <li>
-                <a
-                  href="https://www.health.gov.au/health-topics/health-workforce"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white"
-                >
-                  Health Workforce Resources
-                </a>
+                <Link href="/contact" className="hover:text-accent transition-colors">
+                  Contact Sales
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400">© {new Date().getFullYear()} GPJobs.au. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/terms" className="text-gray-400 hover:text-white">
-              Terms of Service
-            </Link>
-            <Link href="/privacy" className="text-gray-400 hover:text-white">
+        <div className="border-t border-primary-foreground/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <div className="text-sm text-primary-foreground/80 mb-4 md:mb-0">
+            © 2024 Western Sydney Jobs. All rights reserved.
+          </div>
+          <div className="flex space-x-6 text-sm text-primary-foreground/80">
+            <Link href="/privacy" className="hover:text-accent transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/contact" className="text-gray-400 hover:text-white">
+            <Link href="/terms" className="hover:text-accent transition-colors">
+              Terms of Service
+            </Link>
+            <Link href="/contact" className="hover:text-accent transition-colors">
               Contact Us
             </Link>
           </div>
